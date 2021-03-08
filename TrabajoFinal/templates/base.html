@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>operadores logicos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+.formularioRegistro {
+  margin-top: 50px;
+}
+</style>
+<body>
+
+<!-- navegador -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
+    <a href="{% url 'base' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Noticias</a>
+    <a href="{% url 'nosotros' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quienes somos</a>
+    <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Login</a>
+    <a href="{% url 'contacto' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
+    </div>
+</div>
+
+
+
+{% block content %}
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible 
+
+<div class="w3-main" style="margin-left:250px">-->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Somos una Web de novedades</h1>
+      <p>lo mas importante para nosotros es poder compartir las noticias que todos necesitamos.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <div class="w3-col m7">
+        <form >
+      <div>      
+        <label>Buscar</label>
+        <input class="w3-input" type="text" name="Buscar" required>
+        <button>
+          <i class="spinner"></i>
+          <span class="state">buscar</span>
+        </button>
+      </div>
+     </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">aca tendriamos que decir mas</h1>
+      <p>aca va algo medio interesante ponele</p>
+    </div>
+    <div class="w3-third w3-container w3-border w3-padding-large w3-padding-32 w3-center">
+      <p>categorias</p>
+      <p>informacion variada</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">asdasdasdasd</h1>
+      <p>asdasdasdasdasdasd.</p>
+    </div>
+    <div class="w3-third w3-container w3-border w3-padding-large w3-padding-32 w3-center">
+      <p> categorias</p>
+      <p>informacion variada</p>
+      
+    </div>
+  </div>
+
+{% endblock %}
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4><span class="w3-xlarge w3-border-teal w3-bottombar">Operadores Logicos</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
