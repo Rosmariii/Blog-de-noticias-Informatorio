@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import RegistroForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def noticia(request):
 	return render(request,"admi/nuevanoticia.html")
 

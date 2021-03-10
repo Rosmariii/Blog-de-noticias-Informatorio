@@ -19,6 +19,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .formularioRegistro {
   margin-top: 50px;
 }
+.text-white {
+color:white;
+}
 </style>
 <body>
 
@@ -26,20 +29,24 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
     <a href="{% url 'base' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Noticias</a>
     <a href="{% url 'nosotros' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quienes somos</a>
-    <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Login</a>
+    <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Ingresar</a>
     <a href="{% url 'contacto' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contacto</a>
+    
+    {% if user.is_authenticated %}
+      <span class="text-white"> Hola {{user.username}} </span>
+      <a class="text-white" href="{% url 'logout' %}">Salir</a> 
+    {% else %}
+      <a class="text-white" href="{% url 'login' %}">Ingesar</a>
+    {% endif %}
     </div>
 </div>
-
 
 
 {% block content %}
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible 
 

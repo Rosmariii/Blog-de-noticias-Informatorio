@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
   
   {% block content %}
+  
   <div class="w3-container w3-padding-64 w3-center" id="team">
   <div class="wrapper">
-    <form class="login">
+    
+    <form class="login" method="POST">{%csrf_token%}
+      {{form.errors}}
       <p class="title">ingresar</p>
-        <input type="text" placeholder="Usuario" autofocus/>
+        <input type="text" name="username" placeholder="USUARIO"/>
         <i class="fa fa-user"></i>
-        <input type="contraseña" placeholder="contraseña" />
+        <input type="password" name="password" placeholder="PASSWORD"/>
         <i class="fa fa-key"></i>
-        <a href="#">olvidaste tu contraseña?</a>
-        <button>
-          <i class="spinner"></i>
-          <span class="state">ingresar</span>
-        </button>
+        <a href="/usuario/registro">Registrarse</a>
+        <input type="submit" name="" value="ENVIAR">
       </p>
     </form>
   </div>
