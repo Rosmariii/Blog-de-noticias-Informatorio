@@ -4,6 +4,6 @@ from .views import RegistroUsuario
 
 app_name = 'usuario'
 urlpatterns = [
-    path("Newnoticia/", views.noticia , name= "nueva_noticia"),
+#    path("Newnoticia/", views.noticia , name= "nueva_noticia"),
     path("registro/", RegistroUsuario.as_view(), name= "registrar"),
 ]

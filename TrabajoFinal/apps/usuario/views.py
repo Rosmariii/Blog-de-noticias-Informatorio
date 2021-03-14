@@ -3,13 +3,13 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import RegistroForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-@login_required
-def noticia(request):
-	return render(request,"admi/nuevanoticia.html")
+#@login_required
+#def noticia(request):
+#	return render(request,"admi/nuevanoticia.html")
 
-class RegistroUsuario(CreateView):
+class RegistroUsuario(LoginRequiredMixin, CreateView):
 	model = User
 	template_name = 'admi/registrar.html'
 	form_class = RegistroForm
