@@ -7,10 +7,14 @@ from .forms import Formulario_Alta_Redacción
 from .models import Redacción
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
-
+def Listar_Noticia(request):
+    redacción = Redacción.objects.all()
+    ctx = {}
+    ctx['p'] = redacción
+    return render(request,'base.html', ctx)
 
 class RedactarNoticia(LoginRequiredMixin, CreateView):
 	model = Redacción
-	template_name = 'nuevanoticia.html'
 	form_class = Formulario_Alta_Redacción
+	template_name = 'nuevanoticia.html'
 	success_url = reverse_lazy('base')
