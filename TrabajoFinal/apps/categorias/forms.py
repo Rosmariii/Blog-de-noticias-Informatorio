@@ -1,7 +1,7 @@
 from django import forms
-from .models import Redacción
+from .models import Redaccion
 
-class Formulario_Alta_Redacción(forms.ModelForm):
+class Formulario_Alta_Redaccion(forms.ModelForm):
     class Meta:
-        model = Redacción
-        fields = ['titulo', 'texto']
+        model = Redaccion
+        fields = ['titulo', 'texto', 'fecha']

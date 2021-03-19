@@ -1,0 +1,21 @@
+   {% extends 'base.html' %}
+	
+	{% block content %}
+
+      {% if object_list %}
+      <div class="w3-padding-64 w3-padding-large">
+      <table>
+        {% for redaccion in object_list %}
+      <tr>
+        <td>{{redaccion.titulo}}</td>
+        <td>{{redaccion.fecha}}</td>
+        <td>{{redaccion.texto}}</td>
+      </tr>      
+      {% endfor %}
+      </table>
+      {% else %}
+      <h1>No hay registro</h1>
+      {% endif %}
+      </div>
+    
+  {% endblock content %}

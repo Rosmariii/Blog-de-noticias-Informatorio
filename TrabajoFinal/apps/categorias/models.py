@@ -9,10 +9,10 @@ from django.db import models
 #    (4, 'Deportes'),
 #]
 
-class Redacción(models.Model):
+class Redaccion(models.Model):
     titulo = models.CharField(max_length=100)
     texto = models.TextField() 
-    fecha = models.DateTimeField(auto_now_add=True)
+    fecha = models.DateField(auto_now_add=False, auto_now=False, blank=False)
   #  categoria = models.IntegerField(
   #      null=False, blank=False,
   #      choices=categorias_status
@@ -20,4 +20,4 @@ class Redacción(models.Model):
 #    imagen = models.ImageField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.titulo)
