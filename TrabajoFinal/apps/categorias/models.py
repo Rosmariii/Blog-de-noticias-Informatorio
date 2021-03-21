@@ -23,7 +23,7 @@ class Redaccion(models.Model):
     texto = models.TextField() 
     fecha = models.DateField(default=timezone.now)
     categoria = models.CharField(max_length=255, default='coding')
-    #imagen = models.ImageField(verbose_name='Imagen', upload_to='categorias')
+    imagen = models.ImageField(null=True, blank=True, upload_to='image/')
 
     def __str__(self):
         return (self.titulo)
