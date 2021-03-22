@@ -1,24 +1,36 @@
    {% extends 'base.html' %}
 	
 	{% block content %}
-
+      
       {% if object_list %}
       <div class="w3-padding-64 w3-padding-large">
-        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
           <table>
             {% for redaccion in object_list %}
           <tr>
-            <td>{{redaccion.titulo}}</td>
+            <td><a herf="{% url 'categorias:detallearticulo' %}"{{redaccion.titulo}}> </a> - {{ post.autor.first_name }} - {{ post.autor.last_name }}</td>
             <td>{{redaccion.fecha}}</td>
             <td>{{redaccion.texto}}</td>
-            <td>{{redaccion.categoria}}</td>
-            <td>{{redaccion.imagen}}</td>
-          </tr>      
-          {% endfor %}
-          </table>
-          {% else %}
-          <h1>No hay registro</h1>
-          {% endif %}
+            <td>{{redaccion.categoria}}</td> 
+
+          </tr>   
+      {% endfor %}
+      </table>
+      {% else %}
+      <h1>No hay registro</h1>
+      {% endif %}
+      <h2> Comentarios... </h2>
+      <!--{% if not redaccion.comentarios.all %}
+        No hay comentarios.. <a href="{% url 'categorias:nuevocoment'%}">has un comentario</a><br/><br/>
+      {% else %}
+        {% for comentario in redaccion.comentarios.all %}
+        <strong>
+          {{comentario.nombre}} -
+          {{comentario.fecha_comentario}}
+        </strong>
+        <br/>
+        {{comentario.cuerpo}}
+        {% endfor %}
+      {% endif %}-->
       </div>
     
   {% endblock content %}

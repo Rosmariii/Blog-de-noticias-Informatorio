@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+	
+	{% block content %}
+      
+
+
+<h1>{{ redaccion.titulo }}</h1>
+<small> Creado por  {{ post.autor.first_name }} {{ post.autor.last_name }}</small><be/>
+<hr>
+<br/>
+{{comentario.nombre}}
+{{xomentario.redaccion}}
+
+
+ {% endblock content %}
