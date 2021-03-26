@@ -30,10 +30,11 @@ class DetalleArticulo(DetailView):
 	template_name = 'categorias/detalle_articulo.html'
 	
 
-class ComentarioViews(CreateView):
+class ComentarioViews(LoginRequiredMixin, CreateView):
 	model = Comentario
 	form_class = CrearComentario
-	template_name = 'categorias/detalle_articulo.html'
-	success_url = reverse_lazy('base')
+	template_name = 'categorias/añadir_comentario.html'
+	success_url = reverse_lazy('categorias:noticias')
+
 	
 	

@@ -17,19 +17,7 @@
       {% else %}
       <h1>No hay registro</h1>
       {% endif %}
-      <!--<h2> Comentarios... </h2>
-      {% if not redaccion.comentarios.all %}
-        No hay comentarios.. <a href="{% url 'categorias:nuevocoment'%}">has un comentario</a><br/><br/>
-      {% else %}
-        {% for comentario in redaccion.comentarios.all %}
-        <strong>
-          {{comentario.nombre}} -
-          {{comentario.fecha_comentario}}
-        </strong>
-        <br/>
-        {{comentario.cuerpo}}
-        {% endfor %}
-      {% endif %}-->
+      
       </div>
     
   {% endblock content %}

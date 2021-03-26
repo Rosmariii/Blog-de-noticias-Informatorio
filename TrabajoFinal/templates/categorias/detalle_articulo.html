@@ -13,29 +13,24 @@
 <div class="w3-twothird w3-container">
 {{redaccion.texto}}
 </div>
-<br/> <br/>
+<br/><br/>
+<br/><br/>
 <h2> Comentarios... </h2>
-{% for comentario in redaccion.comentarios.all %}
+{% if not redaccion.comentarios.all %}
+        No hay comentarios.. <a href="{% url 'categorias:nuevocoment' redaccion.pk %}">has un comentario</a><br/><br/>
+    {% else %}
+        {% for comentario in redaccion.comentarios.all %}
     <strong>
         {{comentario.nombre}} -
         {{comentario.fecha_comentario}}
     </strong>
     <br/>
         {{comentario.cuerpo}}
-{% endfor %}
-
-      
-<small> Nuevo comentario </small>
-     
-<div class="form-group">
-<form method="POST">
-    {% csrf_token %}
-    {{ comentario.post }}
-    {{ comentario.nombre }}
-    {{ comentario.cuerpo }}
+        {% endfor %}
+{% endif %}
+<br/><br/>
+ <a href="{% url 'categorias:nuevocoment' redaccion.pk %}">has un nuevo comentario</a>
     
-    <input type="submit" name="" value="ENVIAR">
-</div>
-<br/> <br/>
+<br/><br/>
 
  {% endblock content %}
