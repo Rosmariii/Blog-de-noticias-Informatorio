@@ -33,6 +33,6 @@ class Comentario(models.Model):
     nombre = models.CharField(max_length=255)
     cuerpo = models.TextField()
     fecha_comentario = DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.nombre

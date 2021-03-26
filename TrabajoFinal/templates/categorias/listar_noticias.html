@@ -7,9 +7,8 @@
           <table>
             {% for redaccion in object_list %}
           <tr>
-            <td><a herf="{% url 'categorias:detallearticulo' %}"{{redaccion.titulo}}> </a> - {{ post.autor.first_name }} - {{ post.autor.last_name }}</td>
+            <td><a class="w3-container w3-text-teal w3-twothird w3-container" href="{% url 'categorias:detallearticulo' redaccion.pk %}"> {{redaccion.titulo}} </a> Por: {{ redaccion.autor.first_name }} {{ redaccion.autor.last_name }}</td>
             <td>{{redaccion.fecha}}</td>
-            <td>{{redaccion.texto}}</td>
             <td>{{redaccion.categoria}}</td> 
 
           </tr>   
@@ -18,8 +17,8 @@
       {% else %}
       <h1>No hay registro</h1>
       {% endif %}
-      <h2> Comentarios... </h2>
-      <!--{% if not redaccion.comentarios.all %}
+      <!--<h2> Comentarios... </h2>
+      {% if not redaccion.comentarios.all %}
         No hay comentarios.. <a href="{% url 'categorias:nuevocoment'%}">has un comentario</a><br/><br/>
       {% else %}
         {% for comentario in redaccion.comentarios.all %}

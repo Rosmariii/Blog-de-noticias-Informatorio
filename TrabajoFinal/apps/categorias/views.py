@@ -24,15 +24,16 @@ class RedactarNoticia(LoginRequiredMixin, CreateView):
 	template_name = 'nuevanoticia.html'
 	success_url = reverse_lazy('base')
 
+
 class DetalleArticulo(DetailView):
 	model = Redaccion
 	template_name = 'categorias/detalle_articulo.html'
-	success_url = reverse_lazy('base')
+	
 
 class ComentarioViews(CreateView):
 	model = Comentario
 	form_class = CrearComentario
-	template_name = 'categorias/añadir_comentario.html'
+	template_name = 'categorias/detalle_articulo.html'
 	success_url = reverse_lazy('base')
 	
 	
