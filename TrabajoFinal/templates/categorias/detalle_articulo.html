@@ -15,11 +15,14 @@
 </div>
 <br/><br/>
 <br/><br/>
+<br/><br/>
+
 <h2> Comentarios... </h2>
 {% if not redaccion.comentarios.all %}
-        No hay comentarios.. <a href="{% url 'categorias:nuevocoment' redaccion.pk %}">has un comentario</a><br/><br/>
+        No hay comentarios.. 
     {% else %}
         {% for comentario in redaccion.comentarios.all %}
+    <hr>
     <strong>
         {{comentario.nombre}} -
         {{comentario.fecha_comentario}}
@@ -29,8 +32,10 @@
         {% endfor %}
 {% endif %}
 <br/><br/>
- <a href="{% url 'categorias:nuevocoment' redaccion.pk %}">has un nuevo comentario</a>
+ <a href="{% url 'categorias:nuevocoment' redaccion.pk %} "class="w3-text-teal">Has un nuevo comentario</a>
     
 <br/><br/>
-
+<button>
+<a  href="{% url 'categorias:noticias' %}"> Volver a noticias </a>
+</button>
  {% endblock content %}
