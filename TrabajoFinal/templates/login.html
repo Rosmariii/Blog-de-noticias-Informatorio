@@ -7,13 +7,15 @@
     
     <form class="login" method="POST">{%csrf_token%}
       {{form.errors}}
-      <p class="title">ingresar</p>
+      <h1 class="w3-text-teal"> ¡¡Bienvenido al Blog!! </h1>
+      <h4> Entra y contanos tus noticias</h4>
+      <!--<p class="title">ingresar</p>-->
         <input type="text" name="username" placeholder="USUARIO"/>
         <i class="fa fa-user"></i>
-        <input type="password" name="password" placeholder="PASSWORD"/>
+        <input type="password" name="password" placeholder="PASSWORD"/><br/><br/>
         <i class="fa fa-key"></i>
         <a href="/usuario/registro">Registrarse</a>
-        <input type="submit" name="" value="ENVIAR">
+        <input type="submit" name="" value="INGRESAR">
       </p>
     </form>
   </div>

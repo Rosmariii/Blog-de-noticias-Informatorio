@@ -21,6 +21,8 @@ class Redaccion(models.Model):
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=255)
     #imagen = models.ImageField(null=True, blank=True, upload_to='categorias/')
+    class Meta:
+        ordering = ['-fecha']
 
     def __str__(self):
         return self.titulo 
