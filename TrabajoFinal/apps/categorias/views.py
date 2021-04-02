@@ -7,7 +7,7 @@ from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import Formulario_Alta_Redaccion, CrearComentario
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
+from django.views.generic import UpdateView
 from django.views import generic
 from .filters import RedaccionFiltro
 # Create your views here.
@@ -49,6 +49,7 @@ class RedactarNoticia(LoginRequiredMixin, CreateView):
 	success_url = reverse_lazy('categorias:noticias')
 
 
+
 class DetalleArticulo(DetailView):
 	model = Redaccion
 	template_name = 'categorias/detalle_articulo.html'
@@ -61,4 +62,8 @@ class ComentarioViews(LoginRequiredMixin, CreateView):
 	success_url = reverse_lazy('categorias:noticias')
 
 	
-	
+class EditarRedaccion(LoginRequiredMixin ,UpdateView):
+	model = Redaccion
+	template_name = 'categorias/editar.html'
+	fields = [ 'titulo', 'texto']
+	success_url = reverse_lazy('categorias:noticias')

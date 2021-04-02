@@ -30,7 +30,7 @@
         <tr>
           <td><a class="w3-container w3-text-teal w3-twothird w3-container" href="{% url 'categorias:detallearticulo' redaccion.pk %}"> {{ redaccion.titulo }} </a> Por: {{ redaccion.autor.first_name }} {{ redaccion.autor.last_name }}</td>
             <td><div class="w3-padding-large">{{redaccion.fecha}}</td>
-            <td><div class="w3-padding-large">{{redaccion.categoria}}</td>
+            <td><div class="w3-padding-large">{{redaccion.categoria}}<small><a class="w3-text-teal" href="{% url 'categorias:editar' redaccion.pk %}"> Editar </a></small></td>
         </tr>
       {% endfor %}
       </table>
