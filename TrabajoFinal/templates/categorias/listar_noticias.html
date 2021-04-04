@@ -30,12 +30,33 @@
         <tr>
           <td><a class="w3-container w3-text-teal w3-twothird w3-container" href="{% url 'categorias:detallearticulo' redaccion.pk %}"> {{ redaccion.titulo }} </a> Por: {{ redaccion.autor.first_name }} {{ redaccion.autor.last_name }}</td>
             <td><div class="w3-padding-large">{{redaccion.fecha}}</td>
-            <td><div class="w3-padding-large">{{redaccion.categoria}}<small><a class="w3-text-teal" href="{% url 'categorias:editar' redaccion.pk %}"> Editar </a></small></td>
-        </tr>
+            <td><div class="w3-padding-large">{{redaccion.categoria}} 
+            <small><button><a href="{% url 'categorias:editar' redaccion.pk %}"> Editar </a></button></small>
+            <small><button><a href="{% url 'categorias:eliminar' redaccion.pk %}"> Eliminar </a></button></small>
+            </td></div>
+          </tr>  
+      </div>  
       {% endfor %}
       </table>
-      <button>
-      <a  href="{% url 'categorias:noticias' %}"> << todas las noticias </a>
-      </button>
     </div>  
-  {% endblock content %}
+  </div>
+  
+  <!--<div class="modal fadel" id="eliminar" role="dialog"></div>-->
+
+  
+
+  <!--{% block javascript %}
+	<script type="text/javascript">
+    function abrir_modal_eliminar(url){
+      const elementoEliminar = document.getElementById('eliminar')
+
+      fetch(url)
+        .then(response => response.text())
+        .then(body => {
+          elementoEliminar.innerHTML = body;
+        })
+    } 
+ 
+  </script>
+{% endblock %}-->
+{% endblock content %}

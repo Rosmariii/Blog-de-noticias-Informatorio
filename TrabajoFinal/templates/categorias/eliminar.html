@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .modalEliminar__button {
+        margin: 4px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        background-color: #6c757d;
+        color: white;
+      }
+      .modalEliminar__button--cerrar:hover {
+        background-color: #5c636a;
+      }
+      .modalEliminar__button--confirmar {
+        background-color: #0d6efd;
+      }
+      .modalEliminar__button--confirmar:hover {
+        background-color: #0b5ed7;
+      }
+
+      .modalEliminar__btn-close:hover {
+        opacity: 0.7;
+        transition: all .3s;
+      }
+</style>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div style="width: 100vw; height: 100vh; background-color:#bdc3c7; display: flex; justify-content: center; align-items: center;">
+        <form method="POST" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            {% csrf_token %}
+            <h1 style="text-align:center; margin: 0; padding: 0;">¡¿Está seguro de que desea eliminar?!</h1><br><br>
+            
+            <div style="display: flex;">
+                <button class="modalEliminar__button modalEliminar__btn--cerrar">
+                    <a href="{% url 'categorias:noticias' %}" style="color: white; text-decoration: none;" type="submit">Cancelar</a>
+                </button>
+                <button class="modalEliminar__button modalEliminar__button--confirmar" type="submit">Confirmar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+    

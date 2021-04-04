@@ -7,16 +7,15 @@
       <h1 class="w3-text-teal ">
 
 <h1>{{ redaccion.titulo }}</h1>
-<small> Creado por {{ redaccion.autor.first_name }} {{ redaccion.autor.last_name }}</small><br/>
+<small> Creado por {{ redaccion.autor.first_name }} {{ redaccion.autor.last_name }} </small><br/>
 <hr>
 <br/>
-<div class="w3-twothird w3-container">
+<div style="float: initial;" class="w3-twothird w3-container">
 {{redaccion.texto}}
 </div>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-
+<br>
+<br>
+<small><a class="w3-text-teal" href="{% url 'categorias:editar' redaccion.pk %}"> (Editar publicación) </a></small><hr/>
 <h2> Comentarios... </h2>
 {% if not redaccion.comentarios.all %}
         No hay comentarios.. 
