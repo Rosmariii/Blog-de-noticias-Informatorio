@@ -7,8 +7,5 @@ def nosotros(request):
 #def login(request):
 #	return render(request,"login.html")
 
-def contacto(request):
-	return render(request,"contacto.html")
-
 def base(request):
 	return render(request,"base.html")
