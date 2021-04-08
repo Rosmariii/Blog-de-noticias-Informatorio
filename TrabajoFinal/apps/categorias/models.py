@@ -20,7 +20,7 @@ class Redaccion(models.Model):
     categoria = models.CharField(max_length=255, default='coding')
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=255)
-    #imagen = models.ImageField(null=True, blank=True, upload_to='categorias/')
+    
     class Meta:
         ordering = ['-fecha']
 
